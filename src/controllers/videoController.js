@@ -22,7 +22,7 @@ export const getUpload = (req, res) => {
     return res.render("upload", {pageTitle: `Upload Video`});
 };
 
-export const postUpload = (req, res) => {
+export const postUpload = (req, res) => { 
     const {title} = req.body;
     
     videos.push(newVideo);
