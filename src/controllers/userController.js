@@ -134,6 +134,7 @@ export const postEdit = async (req, res) => {
         body: { name, email, username, location },
         file
     } = req;
+    console.log(file);
     //const checkUser = await User.findOne({ email });
     //const checkUsername = await User.findOne({ username });
     //if (!checkUser || !checkUsername) {
@@ -141,7 +142,7 @@ export const postEdit = async (req, res) => {
     const updatedUser = await User.findByIdAndUpdate(
         _id,
         {
-            avatarUrl: file ? file.path : avatarUrl,
+            avatarUrl: file ? file.location : avatarUrl,
             name,
             email,
             username,
